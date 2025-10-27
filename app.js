@@ -139,7 +139,7 @@ function loadTiles() {
         <div>RPE: ${entry.RPE}</div>
         <div class="time">${entry.time}</div>
       </div>
-      <button class="tile-delete" data-idx="${originalIndex}">🗑️</button>
+      <button class="tile-delete" data-idx="${originalIndex}">X</button>
     `;
     tileContainer.appendChild(tile);
   }

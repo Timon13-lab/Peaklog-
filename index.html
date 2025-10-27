@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeakLog</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+    <!-- Chart.js voor grafiek -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- App icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Logo.png">
+
+  <!-- Cache-control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+</head>
+<body>
+  
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <img src="splashscreen.png" alt="PeakLog Logo">
+  </div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <h1 id="pageTitle">PeakLog</h1>
+    <button id="clearAll" title="Delete All Data">X</button>
+  </div>
+
+  <!-- Measurement Page -->
+  <section id="measurementPage" class="active">
+    <h2>Enter Measurement</h2>
+    <div id="tileContainer"></div>
+  </section>
+
+  <!-- Graph Page -->
+  <section id="graphPage">
+    <h2>Graph</h2>
+    <canvas id="glucoseChart"></canvas>
+  </section>
+
+  <!-- History Page -->
+  <section id="historyPage">
+    <h2>History</h2>
+    <div id="historyContainer"></div>
+  </section>
+
+  <!-- Floating Action Button -->
+  <button id="fab">+</button>
+
+  <!-- Input Menu (popup) -->
+  <div id="inputOverlay" class="hidden">
+    <div id="inputMenu">
+      <h3>Add Measurement</h3>
+      <label for="inputValue">Value</label>
+      <input id="inputValue" type="number" step="0.1" placeholder="Enter value" />
+
+      <label for="RPE">RPE</label>
+      <input id="RPE" type="number" min="1" max="10" placeholder="Enter RPE" />
+
+      <button class="save" id="saveBtn">Save</button>
+      <button class="cancel" id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <button class="nav-btn" id="navGraph">📊<span>Graph</span></button>
+    <button class="nav-btn active" id="navMeasure">📏<span>Measurement</span></button>
+    <button class="nav-btn" id="navHistory">📅<span>History</span></button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
